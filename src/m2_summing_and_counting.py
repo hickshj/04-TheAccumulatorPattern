@@ -25,8 +25,8 @@ import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_sum_more_cosines()
-    # run_test_count_sines_from()
+    # run_test_sum_more_cosines()
+    run_test_count_sines_from()
     # run_test_count_sines_vs_cosines()
 
 
@@ -72,13 +72,13 @@ def run_test_sum_more_cosines():
     # Test 2
     expected = -0.86584
     answer = sum_more_cosines(1, 3)
-    print('Test 1 expected:', expected, '(approximately)')
+    print('Test 2 expected:', expected, '(approximately)')
     print('       actual:  ', answer)
 
     # Test 3
     expected = -0.18163
     answer = sum_more_cosines(6, 10)
-    print('Test 1 expected:', expected, '(approximately)')
+    print('Test 3 expected:', expected, '(approximately)')
     print('       actual:  ', answer)
 
 
@@ -144,31 +144,31 @@ def run_test_count_sines_from():
     # Test 2
     expected = 5
     answer = count_sines_from(3, 9)
-    print('Test 1 expected:', expected)
+    print('Test 2 expected:', expected)
     print('       actual:  ', answer)
 
     # Test 3
-    expected = 5
-    answer = count_sines_from(3, 9)
-    print('Test 1 expected:', expected)
+    expected = 1
+    answer = count_sines_from(1, 3)
+    print('Test 3 expected:', expected)
     print('       actual:  ', answer)
 
     # Test 4
-    expected = 5
-    answer = count_sines_from(3, 9)
-    print('Test 1 expected:', expected)
+    expected = 3
+    answer = count_sines_from(4, 7)
+    print('Test 4 expected:', expected)
     print('       actual:  ', answer)
 
     # Test 5
-    expected = 5
-    answer = count_sines_from(3, 9)
-    print('Test 1 expected:', expected)
+    expected = 1
+    answer = count_sines_from(7, 9)
+    print('Test 5 expected:', expected)
     print('       actual:  ', answer)
 
     # Test 6
-    expected = 5
-    answer = count_sines_from(3, 9)
-    print('Test 1 expected:', expected)
+    expected = 4
+    answer = count_sines_from(6, 11)
+    print('Test 6 expected:', expected)
     print('       actual:  ', answer)
 
 
@@ -201,6 +201,11 @@ def count_sines_from(m, n):
     # ------------------------------------------------------------------
     total = 0
     q = n - m
+    for k in range(q + 1):
+        w = math.sin(m + k)
+        if w < .5:
+            total = total + 1
+    return total
 
 
 def run_test_count_sines_vs_cosines():

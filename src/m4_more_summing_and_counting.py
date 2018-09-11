@@ -32,8 +32,8 @@ import builtins  # Never necessary, but here for pedagogical reasons
 def main():
     """ Calls the   TEST   functions in this module. """
     # run_test_sum_from()
-    run_test_factorial()
-    # run_test_count_cosines_from()
+    # run_test_factorial()
+    run_test_count_cosines_from()
     # run_test_sum_unit_fractions_from()
 
 
@@ -220,7 +220,7 @@ def factorial(n):
 def run_test_count_cosines_from():
     """ Tests the   count_cosines_from   function. """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement this TEST function.
+    # Done: 6. Implement this TEST function.
     #   It TESTS the  count_cosines_from  function defined below.
     #   Include at least **   6   ** tests (we wrote one for you).
     #              ** Yes, 6 (six) tests. **
@@ -259,6 +259,36 @@ def run_test_count_cosines_from():
     # Below this comment, add 5 more test cases of your own choosing.
     # ------------------------------------------------------------------
 
+    # Test 2
+    expected = 2
+    answer = count_cosines_from(5, 10, 0.50)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 3
+    expected = 3
+    answer = count_cosines_from(2, 9, 0.20)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 4
+    expected = 4
+    answer = count_cosines_from(1, 9, -0.10)
+    print('Test 4 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 5
+    expected = 5
+    answer = count_cosines_from(6, 13, 0.00)
+    print('Test 5 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 6
+    expected = 4
+    answer = count_cosines_from(2, 6, -0.70)
+    print('Test 6 expected:', expected)
+    print('       actual:  ', answer)
+
 
 def count_cosines_from(m, n, x):
     """
@@ -280,13 +310,21 @@ def count_cosines_from(m, n, x):
       -- count_cosines_from(4, 8, -0.5)  returns  4
     """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # Done: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT: As in previous problems in this session,
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # ------------------------------------------------------------------
+    total = 0
+    q = n - m
+    for k in range(q + 1):
+        w = math.cos(m)
+        if w > x:
+            total = total + 1
+        m = m + 1
+    return total
 
 
 def run_test_sum_unit_fractions_from():

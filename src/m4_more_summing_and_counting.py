@@ -89,6 +89,7 @@ def run_test_sum_from():
     print('Test 4 expected (from formula):', answer_from_formula)
     print('       actual (from my code):  ', answer_from_my_code)
 
+
 # ----------------------------------------------------------------------
 # Done: 2.
 #   When you have READ the above  run_test_sum_from  function,
@@ -136,7 +137,7 @@ def sum_from(m, n):
 def run_test_factorial():
     """ Tests the   factorial   function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # Done: 4. Implement this TEST function.
     #   It TESTS the  factorial  function defined below.
     #   Include at least **   5   ** tests (we wrote two for you).
     #
@@ -169,9 +170,35 @@ def run_test_factorial():
     #   ** uses  math.factorial  as an ORACLE for testing. **
     # ------------------------------------------------------------------
 
+    # Test 3
+    answer_from_oracle = math.factorial(3)
+    answer_from_my_code = factorial(3)
+    print('Test 3 expected (from oracle):', answer_from_oracle)
+    print('       actual (from my code): ', answer_from_my_code)
+
+    # Test 4
+    answer_from_oracle = math.factorial(4)
+    answer_from_my_code = factorial(4)
+    print('Test 3 expected (from oracle):', answer_from_oracle)
+    print('       actual (from my code): ', answer_from_my_code)
+
+    # Test 4
+    answer_from_oracle = math.factorial(5)
+    answer_from_my_code = factorial(5)
+    print('Test 4 expected (from oracle):', answer_from_oracle)
+    print('       actual (from my code): ', answer_from_my_code)
+
 
 def factorial(n):
-    """
+    total = 1
+    q = n
+    for k in range(n):
+        total = (total) * (q)
+        q = q - 1
+    return total
+
+
+"""
     What comes in:  The sole argument is a non-negative integer n.
     What goes out:  Returns n!, that is, n x (n-1) x (n-2) x ... x 1.
     Side effects:   None.
@@ -179,13 +206,15 @@ def factorial(n):
         factorial(5) returns 5 x 4 x 3 x 2 x 1, that is, 120.
         factorial(0) returns 1 (by definition).
     """
-    # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
-    #   Note that you should write its TEST function first (above).
-    #
-    # IMPORTANT:  Your solution MUST
-    #   use an explicit    for ... in range(...):     statement.
-    # ------------------------------------------------------------------
+
+
+# ------------------------------------------------------------------
+# Done: 5. Implement and test this function.
+#   Note that you should write its TEST function first (above).
+#
+# IMPORTANT:  Your solution MUST
+#   use an explicit    for ... in range(...):     statement.
+# ------------------------------------------------------------------
 
 
 def run_test_count_cosines_from():
